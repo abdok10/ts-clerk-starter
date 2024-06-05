@@ -1,6 +1,4 @@
 import {
-  SignInButton,
-  SignOutButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -14,23 +12,25 @@ export default function Header() {
         {"Abd'Ou"}
       </Link>
       <nav className="space-x-4">
-        <Link href="/">Home</Link>
+        <Link href="/dashboard">Dashboard</Link>
         <Link href="/about">About</Link>
-        <Link href="/posts">Posts</Link>
       </nav>
       <span className="text-lg">
         <SignedOut>
           <div className="flex gap-4">
             <span className="hover:underline hover:text-xl transition-all">
-              <SignInButton />
+              <Link href={"sign-in"}>Sign-in</Link>
             </span>
             <span className="hover:underline hover:text-xl transition-all">
-              <SignOutButton />
+              <Link href={"sign-up"}>Sign-up</Link>
             </span>
           </div>
         </SignedOut>
         <SignedIn>
-          <UserButton />
+          <div className="flex items-center gap-4">
+            <Link href={"dashboard"}>Dashboard</Link>
+            <UserButton />
+          </div>
         </SignedIn>
       </span>
     </header>

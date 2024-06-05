@@ -1,7 +1,12 @@
+import { SignedIn } from '@clerk/nextjs'
 import React from 'react'
 
 export default function AboutPage() {
   return (
-    <div>About Page</div>
+    <SignedIn>
+      <div>
+        <h1>About Page</h1>
+      </div>
+    </SignedIn>
   )
 }
